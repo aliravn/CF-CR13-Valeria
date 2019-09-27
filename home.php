@@ -7,9 +7,15 @@ if(!isset($_SESSION['user'])) {
 
 require_once 'db_connect.php';
 
-$sql_user = "SELECT * FROM users WHERE userID=".$_SESSION['user'];
+//display username and userpic in navigarion panel
+$sql_user = "SELECT * FROM users WHERE userID = ".$_SESSION['user'];
 $result = $connect->query($sql_user);
 $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+// display all users except for current user
+$sql_all = "SELECT * FROM users WHERE userID != ".$_SESSION['user'];
+$result_all = $connect->query($sql_all);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +34,8 @@ $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 <!-- NAVBAR section -->
 	<nav class="navbar">
-		<div class="media d-flex align-items-center">
-			<img src="<?php echo $user_details['userpic']; ?>" alt="..." width="80" class="mr-3 rounded img-thumbnail nav-thumbnail-color">
+		<div class="media d-flex align-items-center" >
+			<img src="<?php echo $user_details['userpic']; ?>" alt="..." class="mr-3 rounded img-thumbnail nav-thumbnail-color" id="avatar">
 			<div class="media-body">
 				<h4 class="m-0"><?php echo $user_details['username']; ?></h4>
 				<p class="font-weight-light mb-0">Friends[tba]</p>
@@ -42,7 +48,22 @@ $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	<div class="page-content">
 		<div class="container-fluid">
 			<div class="row">
-			HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)
+				<p class="col-12">HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)</p>
+				<?php 
+				// if($result_all->num_rows > 0) {
+				// 	while($row = $result_all->fetch_assoc()) {
+				// 		echo 
+				// 		"<div class='col-4 col-md-3 p-3'>
+				// 			<div class='col-border'>
+				// 				<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
+				// 				<p class='post-username'>".$row['username']."</p>
+				// 			</div>	
+				// 		</div>";
+				// 	} 
+				// } else {
+				// 	echo "You have already become friends with all registered users";
+				// }	
+				?>
 			</div>
 		</div>
 	</div>
