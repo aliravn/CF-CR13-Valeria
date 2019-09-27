@@ -52,7 +52,9 @@ body {
 	box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+.sidebar-link-large {
+	font-size: 1.2rem;
+}
 
 .sidebar-link {
 	color: #599fd9;

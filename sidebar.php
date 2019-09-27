@@ -10,7 +10,7 @@
 	<ul class="nav flex-column bg-white mb-0">
 		<li class="nav-item">
 			<a href="home.php" class="nav-link text-dark font-italic">
-				<i class="fa fa-home sidebar-link fa-fw"></i>
+				<i class="fa fa-home sidebar-link sidebar-link-large mr-1"></i>
 				Home
 			</a>
 		</li>
