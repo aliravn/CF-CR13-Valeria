@@ -1,12 +1,22 @@
+/* GENERAL section */
+
 body {
 	margin: 0 auto;
 	font-family: 'Blinker', sans-serif;
 	height: 100vh;
 }
 
-.navbar, footer {
-	height: 5vh;
+
+
+/* TOP-NAVIGATON section */
+
+.navbar {
+	height: 10vh;
 	background-color: grey;
+}
+
+.nav-thumbnail-color {
+	background: #599fd9; 
 }
 
 .nav-text-color {
@@ -23,9 +33,26 @@ body {
 	font-size: .9rem;
 }
 
-.sidebar-thumbnail-color {
-	background: #599fd9; 
+.nav-item:hover {
+	background-color: lightblue;
+} 
+
+/* SIDEBAR section */
+
+.sidebar-nav {
+	background: #6e92c2; 
+	height: 85vh;
+	max-width: 13rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 10vh;
+	padding-top: 1rem;
+	width: 13rem;
+	box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .sidebar-link {
 	color: #599fd9;
@@ -34,7 +61,15 @@ body {
 .page-content {
 	background: lightgrey;
 	width: calc(100% - 13rem); 
-	height: 90vh;
+	height: 85vh;
 	margin-left: 13rem;
 	overflow-y: auto;
+}
+
+
+
+/* FOOTER section */
+footer {
+	height: 5vh;
+	background-color: grey;
 }
