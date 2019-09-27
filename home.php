@@ -54,7 +54,7 @@ $result_all = $connect->query($sql_all);
 				if($result_all->num_rows > 0) {
 					while($row = $result_all->fetch_assoc()) {
 						echo 
-						"<div class='col-4 col-md-3 p-3'>
+						"<div class='col-6 col-md-3 col-lg-2 p-3'>
 							<div class='friend-card'>
 								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
 								<p class='friend-username'>".$row['username']."</p>
