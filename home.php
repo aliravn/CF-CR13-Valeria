@@ -47,22 +47,23 @@ $result_all = $connect->query($sql_all);
 <!-- PAGE CONTENT section -->
 	<div class="page-content">
 		<div class="container-fluid">
+			<p class="col-12 text-center">HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)</p>
 			<div class="row">
-				<p class="col-12">HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)</p>
+				
 				<?php 
-				// if($result_all->num_rows > 0) {
-				// 	while($row = $result_all->fetch_assoc()) {
-				// 		echo 
-				// 		"<div class='col-4 col-md-3 p-3'>
-				// 			<div class='col-border'>
-				// 				<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
-				// 				<p class='post-username'>".$row['username']."</p>
-				// 			</div>	
-				// 		</div>";
-				// 	} 
-				// } else {
-				// 	echo "You have already become friends with all registered users";
-				// }	
+				if($result_all->num_rows > 0) {
+					while($row = $result_all->fetch_assoc()) {
+						echo 
+						"<div class='col-4 col-md-3 p-3'>
+							<div class='friend-card'>
+								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
+								<p class='friend-username'>".$row['username']."</p>
+							</div>	
+						</div>";
+					} 
+				} else {
+					echo "You have already become friends with all registered users";
+				}	
 				?>
 			</div>
 		</div>
