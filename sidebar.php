@@ -3,6 +3,10 @@
 		header("Location: index.php");
 		exit;
 	}
+
+	$sql_counter = "SELECT userID FROM users WHERE userID !=" .$_SESSION['user'];
+	$result_counter = $connect->query($sql_counter);
+	$counter = $result_counter->num_rows;
 ?>
 
 <div class="sidebar-nav bg-white" id="sidebar">
@@ -10,7 +14,7 @@
 		<img src="<?php echo $user_details['userpic']; ?>" alt="..." class="mr-3 rounded img-thumbnail nav-thumbnail-color" id="avatar">
 		<div class="media-body">
 			<h4 class="m-0"><?php echo $user_details['username']; ?></h4>
-			<p class="font-weight-light mb-0">Friends[tba]</p>
+			<p class="font-weight-light mb-0">Friends[<?php echo $result->num_rows; ?>/<?php echo $counter; ?>]</p>
 		</div>
 	</div>
 	<p class="text-gray font-weight-bold text-uppercase px-3 mb-0 small">Navigation</p>

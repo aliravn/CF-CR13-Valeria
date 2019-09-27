@@ -12,14 +12,14 @@ $result = $connect->query($sql_user);
 $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 // display all friends of the current user
-$sql = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
-$result = $connect->query($sql);
+$sql_friends = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
+$result_friends = $connect->query($sql_friends);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Friends</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,18 +30,17 @@ $result = $connect->query($sql);
 
 <body>
 
-<!-- NAVBAR section -->
-	<nav class="navbar">
-	</nav>
+<!-- HEADER section -->
+<header></header>
 
 <!-- PAGE CONTENT section -->
 	<div class="page-content page-content-friendship">
 		<div class="container-fluid">
 			<div class="row">
 				<?php
-				if($result->num_rows > 0) {
+				if($result_friends->num_rows > 0) {
 					echo "<p class='col-12 text-center'>THESE ARE FRIENDS OF <span> ".$user_details['username']. "</span></p>";
-					while($row = $result->fetch_assoc()) {
+					while($row = $result_friends->fetch_assoc()) {
 						echo
 						"<div class='col-6 col-md-3 col-lg-2 p-2'>
 							<div class='friend-card col-border col-border-friends p-2'>
