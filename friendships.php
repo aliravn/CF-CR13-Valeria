@@ -12,31 +12,8 @@ $result = $connect->query($sql_user);
 $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 // display all friends of the current user
-$sql_friendships = "SELECT userID, username, fk_userID_from, fk_userID_to FROM friendships JOIN users ON userID = fk_userID_from OR userID = fk_userID_to WHERE userID=".$_SESSION['user'];
-$result_friendships = $connect->query($sql_friendships);
-if($result_friendships->num_rows > 0) {
-	$friends_list = [];
-	while($row = $result_friendships->fetch_assoc()) {
-		if($row['fk_userID_from'] != $_SESSION['user']) {
-			$friends_list[] = $row['fk_userID_from'];
-		} else {
-			$friends_list[] = $row['fk_userID_to'];
-		}
-	}
-	$friends = [];
-	foreach ($friends_list as $value){
-		$sql_friend = "SELECT * FROM users WHERE userID='$value'";
-		$result = $connect->query($sql_friend);
-		$row = $result->fetch_assoc();
-		$friends[] = [
-			'name' => $row['username'],
-			'avatar' => $row['userpic'],
-			'userID' => $row['userID']
-		];
-	}
-} else {
-	$report = "You have no friends yet";
-}	
+$sql = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
+$result = $connect->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -70,20 +47,20 @@ if($result_friendships->num_rows > 0) {
 		<div class="container-fluid">
 			<div class="row">
 				<?php
-				if (!empty($friends)) {
+				if($result->num_rows > 0) {
 					echo "<p class='col-12 text-center'>THESE ARE FRIENDS OF <span> ".$user_details['username']. "</span></p>";
-					foreach ($friends as $value){
-						echo 
+					while($row = $result->fetch_assoc()) {
+						echo
 						"<div class='col-6 col-md-3 col-lg-2 p-2'>
 							<div class='friend-card col-border p-2'>
-								<img class='img-fluid img-thumbnail' src=".$value['avatar'].">
-								<p class='friend-username'>".$value['name']."</p>
+								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
+								<p class='friend-username'>".$row['username']."</p>
 							</div>
 						</div>";
 					}
 				} else {	
-					echo "<p class='col-12 text-center'> <span>$report</span></p>";
-				}	
+					echo "<p class='col-12 text-center'> <span>You have no friends yet</span></p>";
+				}
 				?>
 			</div>
 		</div>
