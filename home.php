@@ -40,21 +40,20 @@ $result_others = $connect->query($sql_others);
 <!-- PAGE CONTENT section -->
 	<div class="page-content">
 		<div class="container-fluid">
-			<p class="col-12 text-center">THESE ARE OTHER REGISTERED USERS, WHO ARE NOT YOUR FRIENDS YET</p>
-			<div class="row">
-				
+			<div class="row">		
 				<?php
 				if($result_others->num_rows > 0) {
+					echo "<p class='col-12 text-center'>THESE ARE OTHER REGISTERED USERS, WHO ARE NOT YOUR FRIENDS YET</p>";
 					while($row = $result_others->fetch_assoc()) {
 						echo 
-						"<div class='col-6 col-md-3 col-lg-2 p-2'>
+						"<div class='col-6 col-md-3 col-lg-2 p-2 friend-card'>
 							<div class='friend-card col-border p-2'>
 								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
 								<p class='friend-username'>".$row['username']."</p>
-								<a class='' href='add_friend.php?id=".$row['userID']."'>
-									<button class='' type='button'>Add Friend</button>
-								</a>
 							</div>
+							<a class='button-container' href='add_friend.php?id=".$row['userID']."'>
+								<button class='' type='button'>Add Friend</button>
+							</a>							
 						</div>";
 					} 
 				} else {

@@ -42,7 +42,7 @@ $result_friends = $connect->query($sql_friends);
 					echo "<p class='col-12 text-center'>THESE ARE FRIENDS OF <span> ".$user_details['username']. "</span></p>";
 					while($row = $result_friends->fetch_assoc()) {
 						echo
-						"<div class='col-6 col-md-3 col-lg-2 p-2'>
+						"<div class='col-6 col-md-3 col-lg-2 p-2  friend-card'>
 							<div class='friend-card col-border col-border-friends p-2'>
 								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
 								<p class='friend-username'>".$row['username']."</p>
