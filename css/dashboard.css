@@ -10,6 +10,12 @@ body {
 	text-align: center;
 }
 
+.text-center span {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: blue;
+}
+
 /* TOP-NAVIGATON section */
 
 .navbar {
@@ -89,6 +95,7 @@ body {
 .friend-username {
 	font-weight: bold;
 	font-size: 1.2rem;
+	margin: 0;
 }
 
 .col-border {

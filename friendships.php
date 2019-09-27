@@ -6,10 +6,37 @@ if(!isset($_SESSION['user'])) {
 }
 
 require_once 'db_connect.php';
-
+//display username and userpic in navigation panel
 $sql_user = "SELECT * FROM users WHERE userID=".$_SESSION['user'];
 $result = $connect->query($sql_user);
 $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+// display all friends of the current user
+$sql_friendships = "SELECT userID, username, fk_userID_from, fk_userID_to FROM friendships JOIN users ON userID = fk_userID_from OR userID = fk_userID_to WHERE userID=".$_SESSION['user'];
+$result_friendships = $connect->query($sql_friendships);
+if($result_friendships->num_rows > 0) {
+	$friends_list = [];
+	while($row = $result_friendships->fetch_assoc()) {
+		if($row['fk_userID_from'] != $_SESSION['user']) {
+			$friends_list[] = $row['fk_userID_from'];
+		} else {
+			$friends_list[] = $row['fk_userID_to'];
+		}
+	}
+	$friends = [];
+	foreach ($friends_list as $value){
+		$sql_friend = "SELECT * FROM users WHERE userID='$value'";
+		$result = $connect->query($sql_friend);
+		$row = $result->fetch_assoc();
+		$friends[] = [
+			'name' => $row['username'],
+			'avatar' => $row['userpic'],
+			'userID' => $row['userID']
+		];
+	}
+} else {
+	echo "You have no friends yet";
+}	
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +66,21 @@ $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	</nav>
 
 <!-- PAGE CONTENT section -->
-	<div class="page-content page-content-friendship">
+	<div class="page-content">
 		<div class="container-fluid">
+			<p class="col-12 text-center">THESE ARE FRIENDS OF <span><?php echo $user_details['username']; ?></span></p>
 			<div class="row">
-			HERE ALL THE EXISTING FRIENDS OF THE CURRENT USER WILL BE DISPLAYED
+				<?php 
+				foreach ($friends as $value){
+					echo 
+					"<div class='col-6 col-md-3 col-lg-2 p-2'>
+						<div class='friend-card col-border p-2'>
+							<img class='img-fluid img-thumbnail' src=".$value['avatar'].">
+							<p class='friend-username'>".$value['name']."</p>
+						</div>
+					</div>";
+				}	
+				?>
 			</div>
 		</div>
 	</div>
