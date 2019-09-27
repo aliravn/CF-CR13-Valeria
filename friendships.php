@@ -35,7 +35,7 @@ if($result_friendships->num_rows > 0) {
 		];
 	}
 } else {
-	echo "You have no friends yet";
+	$report = "You have no friends yet";
 }	
 ?>
 
@@ -66,19 +66,23 @@ if($result_friendships->num_rows > 0) {
 	</nav>
 
 <!-- PAGE CONTENT section -->
-	<div class="page-content">
+	<div class="page-content page-content-friendship">
 		<div class="container-fluid">
-			<p class="col-12 text-center">THESE ARE FRIENDS OF <span><?php echo $user_details['username']; ?></span></p>
 			<div class="row">
-				<?php 
-				foreach ($friends as $value){
-					echo 
-					"<div class='col-6 col-md-3 col-lg-2 p-2'>
-						<div class='friend-card col-border p-2'>
-							<img class='img-fluid img-thumbnail' src=".$value['avatar'].">
-							<p class='friend-username'>".$value['name']."</p>
-						</div>
-					</div>";
+				<?php
+				if (!empty($friends)) {
+					echo "<p class='col-12 text-center'>THESE ARE FRIENDS OF <span> ".$user_details['username']. "</span></p>";
+					foreach ($friends as $value){
+						echo 
+						"<div class='col-6 col-md-3 col-lg-2 p-2'>
+							<div class='friend-card col-border p-2'>
+								<img class='img-fluid img-thumbnail' src=".$value['avatar'].">
+								<p class='friend-username'>".$value['name']."</p>
+							</div>
+						</div>";
+					}
+				} else {	
+					echo "<p class='col-12 text-center'> <span>$report</span></p>";
 				}	
 				?>
 			</div>
