@@ -15,17 +15,17 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a href="#" class="nav-link text-dark font-italic">
-				<i class="fa fa-user-plus sidebar-link fa-fw"></i>
-				Add friends [n/a]
-			</a>
-		</li>
-		<li class="nav-item">
 			<a href="friendships.php" class="nav-link text-dark font-italic">
 				<i class="fa fa-users sidebar-link fa-fw"></i>
 				Show friends [ok]
 			</a>
 		</li>
+		<li class="nav-item">
+			<a href="friendships.php" class="nav-link text-dark font-italic">
+				<i class="fa fa-address-book sidebar-link fa-fw"></i>
+				Show requests [n/a]
+			</a>
+		</li>		
 
 		<p class="text-gray font-weight-bold text-uppercase px-3 mt-3 mb-0 small">User settings [n/a]</p>
 		<li class="nav-item">
