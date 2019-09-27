@@ -1,0 +1,40 @@
+body {
+	margin: 0 auto;
+	font-family: 'Blinker', sans-serif;
+	height: 100vh;
+}
+
+.navbar, footer {
+	height: 5vh;
+	background-color: grey;
+}
+
+.nav-text-color {
+	color: #599fd9 !important;
+	font-weight: bold;
+}
+
+.nav-logout-color {
+	color: #f21b1b !important;
+	font-weight: bold;
+}
+
+.nav-text-font {
+	font-size: .9rem;
+}
+
+.sidebar-thumbnail-color {
+	background: #599fd9; 
+}
+
+.sidebar-link {
+	color: #599fd9;
+}
+
+.page-content {
+	background: lightgrey;
+	width: calc(100% - 13rem); 
+	height: 90vh;
+	margin-left: 13rem;
+	overflow-y: auto;
+}
