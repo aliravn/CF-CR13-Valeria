@@ -128,12 +128,10 @@ $(document).ready(function(){
 					$('#availability').html('<span class="text-danger">User name already in use</span>');
 					$('#register').attr("disabled", true);
 					$('#register').css("background-color", "grey");
-					console.log(data);
 				} else {
 					$('#availability').html('<span class="text-success">User name available</span>');
 					$('#register').attr("disabled", false);
-					$('#register').css("background-color", "lightblue");
-					console.log(data);					
+					$('#register').css("background-color", "lightblue");			
 				}
 			}
 		})
