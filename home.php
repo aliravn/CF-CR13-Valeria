@@ -12,10 +12,6 @@ $sql_user = "SELECT * FROM users WHERE userID = ".$_SESSION['user'];
 $result = $connect->query($sql_user);
 $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-// display all users except for current user
-// $sql_all = "SELECT * FROM users WHERE userID != ".$_SESSION['user'];
-// $result_all = $connect->query($sql_all);
-
 // display all non-friends for current user
 $sql_others = "SELECT userID, username, userpic FROM users WHERE userID NOT IN (SELECT fk_userID_from as userID FROM friendships WHERE fk_userID_from = "
 .$_SESSION['user']." OR fk_userID_to = ".$_SESSION['user']." UNION SELECT fk_userID_to as userID FROM friendships WHERE fk_userID_from = "
@@ -40,13 +36,6 @@ $result_others = $connect->query($sql_others);
 
 <!-- NAVBAR section -->
 	<nav class="navbar">
-		<div class="media d-flex align-items-center" >
-			<img src="<?php echo $user_details['userpic']; ?>" alt="..." class="mr-3 rounded img-thumbnail nav-thumbnail-color" id="avatar">
-			<div class="media-body">
-				<h4 class="m-0"><?php echo $user_details['username']; ?></h4>
-				<p class="font-weight-light mb-0">Friends[tba]</p>
-			</div>
-		</div>	
 		<a href="logout.php?logout" class="nav-logout-color" />Logout<i class="fa fa-sign-out nav-logout-color fa-fw"></i></a>
 	</nav>
 
