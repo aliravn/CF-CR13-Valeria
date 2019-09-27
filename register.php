@@ -39,7 +39,7 @@ if (isset($_POST['btn-signup'])) {
 		$emailError = "Please enter valid email address." ;
 	} else {
 		$query = "SELECT useremail FROM users WHERE useremail='$email'";
-		$result = mysqli_query($connect, $query);
+		$result = $connect->query($query);
 		$count = mysqli_num_rows($result);
 		if($count!=0){
 			$error = true;
