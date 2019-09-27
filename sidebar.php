@@ -47,5 +47,12 @@
 				Password [n/a]
 			</a>
 		</li>
+		<li class="nav-item">
+			<a href="logout.php?logout" class="nav-link text-dark font-italic nav-logout-color" />
+				<i class="fa fa-sign-out nav-logout-color fa-fw"></i>
+				Logout
+			</a>
+		</li>		
 	</ul>
 </div>
+

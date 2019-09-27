@@ -32,14 +32,6 @@ $result = $connect->query($sql);
 
 <!-- NAVBAR section -->
 	<nav class="navbar">
-		<div class="media d-flex align-items-center">
-			<img src="<?php echo $user_details['userpic']; ?>" alt="..." width="80" class="mr-3 rounded img-thumbnail nav-thumbnail-color">
-			<div class="media-body">
-				<h4 class="m-0"><?php echo $user_details['username']; ?></h4>
-				<p class="font-weight-light mb-0">Friends[tba]</p>
-			</div>
-		</div>	
-		<a href="logout.php?logout" class="nav-logout-color" />Logout<i class="fa fa-sign-out nav-logout-color fa-fw"></i></a>
 	</nav>
 
 <!-- PAGE CONTENT section -->
@@ -52,7 +44,7 @@ $result = $connect->query($sql);
 					while($row = $result->fetch_assoc()) {
 						echo
 						"<div class='col-6 col-md-3 col-lg-2 p-2'>
-							<div class='friend-card col-border p-2'>
+							<div class='friend-card col-border col-border-friends p-2'>
 								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
 								<p class='friend-username'>".$row['username']."</p>
 							</div>

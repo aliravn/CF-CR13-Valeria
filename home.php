@@ -35,9 +35,9 @@ $result_others = $connect->query($sql_others);
 <body>
 
 <!-- NAVBAR section -->
-	<nav class="navbar">
-		<a href="logout.php?logout" class="nav-logout-color" />Logout<i class="fa fa-sign-out nav-logout-color fa-fw"></i></a>
-	</nav>
+	<header class="navbar">
+
+	</header>
 
 <!-- PAGE CONTENT section -->
 	<div class="page-content">
@@ -72,7 +72,7 @@ $result_others = $connect->query($sql_others);
 
 
 <footer>
-	2019 &copy; AliraVN
+	<p>2019 &copy; AliraVN</p>
 </footer>
 <!-- ********************** JavaScript starts here **********************-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
