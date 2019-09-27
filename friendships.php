@@ -39,10 +39,10 @@ $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	</nav>
 
 <!-- PAGE CONTENT section -->
-	<div class="page-content">
+	<div class="page-content page-content-friendship">
 		<div class="container-fluid">
 			<div class="row">
-			HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)
+			HERE ALL THE EXISTING FRIENDS OF THE CURRENT USER WILL BE DISPLAYED
 			</div>
 		</div>
 	</div>

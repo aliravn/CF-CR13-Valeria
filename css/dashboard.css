@@ -60,6 +60,8 @@ body {
 	color: #599fd9;
 }
 
+/* PAGE CONTENT section */
+
 .page-content {
 	background: lightgrey;
 	width: calc(100% - 13rem); 
@@ -68,6 +70,9 @@ body {
 	overflow-y: auto;
 }
 
+.page-content-friendship {
+	background: lightblue;
+}
 
 
 /* FOOTER section */
