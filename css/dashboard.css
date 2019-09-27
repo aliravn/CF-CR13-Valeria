@@ -75,7 +75,7 @@ header {
 /* PAGE CONTENT section */
 
 .page-content {
-	background: lightgrey;
+	background: #ffa270;
 	width: calc(100% - 13rem); 
 	height: 85vh;
 	margin-left: 13rem;

@@ -40,7 +40,7 @@ $result_others = $connect->query($sql_others);
 <!-- PAGE CONTENT section -->
 	<div class="page-content">
 		<div class="container-fluid">
-			<p class="col-12 text-center">HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)</p>
+			<p class="col-12 text-center">THESE ARE OTHER REGISTERED USERS, WHO ARE NOT YOUR FRIENDS YET</p>
 			<div class="row">
 				
 				<?php

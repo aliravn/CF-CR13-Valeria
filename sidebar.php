@@ -7,6 +7,9 @@
 	$sql_counter = "SELECT userID FROM users WHERE userID !=" .$_SESSION['user'];
 	$result_counter = $connect->query($sql_counter);
 	$counter = $result_counter->num_rows;
+
+	$sql_friends = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
+	$result_friends = $connect->query($sql_friends);
 ?>
 
 <div class="sidebar-nav bg-white" id="sidebar">
@@ -14,7 +17,7 @@
 		<img src="<?php echo $user_details['userpic']; ?>" alt="..." class="mr-3 rounded img-thumbnail nav-thumbnail-color" id="avatar">
 		<div class="media-body">
 			<h4 class="m-0"><?php echo $user_details['username']; ?></h4>
-			<p class="font-weight-light mb-0">Friends[<?php echo $result->num_rows; ?>/<?php echo $counter; ?>]</p>
+			<p class="font-weight-light mb-0">Friends[<?php echo $result_friends->num_rows; ?>/<?php echo $counter; ?>]</p>
 		</div>
 	</div>
 	<p class="text-gray font-weight-bold text-uppercase px-3 mb-0 small">Navigation</p>
