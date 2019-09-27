@@ -34,10 +34,8 @@ $result_others = $connect->query($sql_others);
 
 <body>
 
-<!-- NAVBAR section -->
-	<header class="navbar">
-
-	</header>
+<!-- HEADER section -->
+	<header></header>
 
 <!-- PAGE CONTENT section -->
 	<div class="page-content">

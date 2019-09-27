@@ -18,9 +18,9 @@ body {
 
 /* TOP-NAVIGATON section */
 
-.navbar {
+header {
 	height: 10vh;
-	background-color: grey;
+	background-color: #fa7a0a;
 }
 
 #avatar {
