@@ -7,14 +7,20 @@ if(!isset($_SESSION['user'])) {
 
 require_once 'db_connect.php';
 
-//display username and userpic in navigarion panel
+//display username and userpic in navigation panel
 $sql_user = "SELECT * FROM users WHERE userID = ".$_SESSION['user'];
 $result = $connect->query($sql_user);
 $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 // display all users except for current user
-$sql_all = "SELECT * FROM users WHERE userID != ".$_SESSION['user'];
-$result_all = $connect->query($sql_all);
+// $sql_all = "SELECT * FROM users WHERE userID != ".$_SESSION['user'];
+// $result_all = $connect->query($sql_all);
+
+// display all non-friends for current user
+$sql_others = "SELECT userID, username, userpic FROM users WHERE userID NOT IN (SELECT fk_userID_from as userID FROM friendships WHERE fk_userID_from = "
+.$_SESSION['user']." OR fk_userID_to = ".$_SESSION['user']." UNION SELECT fk_userID_to as userID FROM friendships WHERE fk_userID_from = "
+.$_SESSION['user']." OR fk_userID_to = ".$_SESSION['user'].")";
+$result_others = $connect->query($sql_others);
 
 ?>
 
@@ -50,9 +56,9 @@ $result_all = $connect->query($sql_all);
 			<p class="col-12 text-center">HERE ALL THE OTHER REGISTERED USERS WILL BE DISPLAYED (to send friends request to)</p>
 			<div class="row">
 				
-				<?php 
-				if($result_all->num_rows > 0) {
-					while($row = $result_all->fetch_assoc()) {
+				<?php
+				if($result_others->num_rows > 0) {
+					while($row = $result_others->fetch_assoc()) {
 						echo 
 						"<div class='col-6 col-md-3 col-lg-2 p-2'>
 							<div class='friend-card col-border p-2'>
