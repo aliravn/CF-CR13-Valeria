@@ -45,7 +45,7 @@ $result_others = $connect->query($sql_others);
 			<div class="row">		
 				<?php
 				if($result_others->num_rows > 0) {
-					echo "<p class='col-12 text-center'>THESE ARE OTHER REGISTERED USERS, WHO ARE NOT YOUR FRIENDS YET</p>";
+					echo "<h4 class='col-12 text-center'>THESE ARE REGISTERED USERS, WHO ARE NOT YOUR FRIENDS YET</h4>";
 					echo "<div class='col-12 text-center' id='update'></div>";
 					while($row = $result_others->fetch_assoc()) {
 						echo 
