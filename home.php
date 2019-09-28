@@ -37,7 +37,7 @@ $result_others = $connect->query($sql_others);
 
 <!-- HEADER section -->
 	<header>
-		<h2>PEOPLE.net = finding friends made easy</h2>
+		<h2>PEOPLE = finding friends made easy</h2>
 	</header>
 
 <!-- PAGE CONTENT section -->
