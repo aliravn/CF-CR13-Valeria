@@ -25,13 +25,13 @@
 		<li class="nav-item">
 			<a href="home.php" class="nav-link text-dark font-italic">
 				<i class="fa fa-home sidebar-link sidebar-link-large mr-1"></i>
-				Home
+				Home / Non-friends
 			</a>
 		</li>
 		<li class="nav-item">
 			<a href="friendships.php" class="nav-link text-dark font-italic">
 				<i class="fa fa-users sidebar-link fa-fw"></i>
-				Show friends [ok]
+				Show friends
 			</a>
 		</li>
 		<li class="nav-item">
