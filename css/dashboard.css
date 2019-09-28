@@ -133,11 +133,17 @@ header h2 {
 	background-color: #63f263;
 }
 
+.col-border-pending {
+	background-color: yellow;
+}
+
 .button-container {
 	margin: .5rem 0;
 }
 
-
+.row {
+	margin-bottom: 1rem;
+}
 
 
 /****************************** FOOTER section *******************************/
