@@ -15,9 +15,8 @@ $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
 // display all non-friends for current user
 $sql_others = "SELECT userID, username, userpic FROM users WHERE userID NOT IN (SELECT fk_userID_from as userID FROM friendships WHERE fk_userID_from = "
 .$_SESSION['user']." OR fk_userID_to = ".$_SESSION['user']." UNION SELECT fk_userID_to as userID FROM friendships WHERE fk_userID_from = "
-.$_SESSION['user']." OR fk_userID_to = ".$_SESSION['user'].")";
+.$_SESSION['user']." OR fk_userID_to = ".$_SESSION['user'].") AND userID !=".$_SESSION['user'];
 $result_others = $connect->query($sql_others);
-
 ?>
 
 <!DOCTYPE html>
