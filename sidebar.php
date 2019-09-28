@@ -1,16 +1,16 @@
 <?php 
-	if(!isset($_SESSION['user'])) {
-		header("Location: index.php");
-		exit;
-	}
+if(!isset($_SESSION['user'])) {
+	header("Location: index.php");
+	exit;
+}
 
-	$sql_counter = "SELECT userID FROM users WHERE userID !=" .$_SESSION['user'];
-	$result_counter = $connect->query($sql_counter);
-	$counter = $result_counter->num_rows;
+$sql_counter = "SELECT userID FROM users WHERE userID !=" .$_SESSION['user'];
+$result_counter = $connect->query($sql_counter);
+$counter = $result_counter->num_rows;
 
-	// select all entries in friendships with current user in it
-	$sql_friends = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
-	$result_friends = $connect->query($sql_friends);
+// display all friends of the current user, who confirmed request
+$sql_friends = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE friend_status='confirmed' AND fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR friend_status='confirmed' AND fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
+$result_friends = $connect->query($sql_friends);
 ?>
 
 <div class="sidebar-nav bg-white" id="sidebar">
