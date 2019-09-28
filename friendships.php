@@ -39,7 +39,9 @@ $result_friends = $connect->query($sql_friends);
 			<div class="row">
 				<?php
 				if($result_friends->num_rows > 0) {
-					echo "<p class='col-12 text-center'>THESE ARE FRIENDS OF <span> ".$user_details['username']. "</span></p>";
+					$name_of_user = strtoupper($user_details['username']);
+					echo "<h4 class='col-12 text-center'>THESE ARE FRIENDS OF <span>$name_of_user</span></h4>";
+					echo "<div class='col-12 text-center' id='update'></div>";
 					while($row = $result_friends->fetch_assoc()) {
 						echo
 						"<div class='col-6 col-md-3 col-lg-2 p-2  friend-card'>

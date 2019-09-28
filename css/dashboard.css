@@ -16,11 +16,30 @@ body {
 	color: blue;
 } */
 
-/* TOP-NAVIGATON section */
+
+
+/****************************** HEADER section *******************************/
 
 header {
 	height: 10vh;
 	background-color: #599FD9;
+}
+
+
+
+/****************************** SIDEBAR section *******************************/
+
+.sidebar-nav {
+	background: #6e92c2; 
+	height: 85vh;
+	max-width: 13rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 10vh;
+	padding-top: 1rem;
+	width: 13rem;
+	box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 #avatar {
@@ -44,21 +63,6 @@ header {
 	background-color: lightblue;
 } 
 
-/* SIDEBAR section */
-
-.sidebar-nav {
-	background: #6e92c2; 
-	height: 85vh;
-	max-width: 13rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-top: 10vh;
-	padding-top: 1rem;
-	width: 13rem;
-	box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.1);
-}
-
 .sidebar-link-large {
 	font-size: 1.2rem;
 }
@@ -72,7 +76,9 @@ header {
 /* 	font-weight: bold; */
 }
 
-/* PAGE CONTENT section */
+
+
+/****************************** PAGE CONTENT section *******************************/
 
 .page-content {
 	background: lightblue;
@@ -86,6 +92,12 @@ header {
 .page-content-friendship {
 	background: lightblue;
 }
+
+.page-content h4 > span {
+	margin-left: .3rem;
+	font-weight: bold;
+}
+
 
 #update {
   height: 1.5rem;
@@ -118,7 +130,11 @@ header {
 	margin: .5rem 0;
 }
 
-/* FOOTER section */
+
+
+
+/****************************** FOOTER section *******************************/
+
 footer {
 	height: 5vh;
 	background-color: grey;
