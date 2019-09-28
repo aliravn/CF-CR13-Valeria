@@ -52,7 +52,8 @@ $result_friends = $connect->query($sql_friends);
 						</div>";
 					}
 				} else {	
-					echo "<p class='col-12 text-center'> <span>You have no friends yet</span></p>";
+					echo "<h4 class='col-12 text-center'>YOU HAVE NO FRIENDS YET</h4>";
+					echo "<h4 class='col-12 text-center'>=^.^=</h4>";
 				}
 				?>
 			</div>
