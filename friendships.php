@@ -96,14 +96,14 @@ $result_friend_request = $connect->query($sql_friend_request);
 								<img class='img-fluid img-thumbnail' src=".$row['userpic'].">
 								<p class='friend-username'>".$row['username']."</p>
 							</div>
-							<a class='button-container'>	
+							<a class='button-container' href='confirm_friend_request.php?id=".$row['friendshipID']."'>	
 								<button class='add-friend-button' id='".$row['friendshipID']."' type='button'>Confirm</button>
 							</a>
 						</div>";
 					}
 				}
 				?>
-			</div>			
+			</div>
 		</div>
 	</div>
 
