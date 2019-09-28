@@ -5,21 +5,27 @@ if(!isset($_SESSION['user'])) {
 	exit;
 } else {
 	require_once 'db_connect.php';
-
-	// $sql_user = "SELECT * FROM users WHERE userID=".$_SESSION['user'];
-	// $result = $connect->query($sql_user);
-	// $user_details = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-	if ($_GET['id']) {
-	$id = $_GET['id'];
-	$sql_add_friend = "INSERT INTO friendships (`fk_userID_from`,`fk_userID_to`) VALUES ('".$_SESSION['user']."','$id')";
-	if($connect->query($sql_add_friend) === TRUE) {
-		header("Location: home.php");
-		exit;
-	} else {
-			echo "Error while sending friend request: ". $connect->error;
-		}
+//insernt i DB with ajax request
+	if (isset($_POST["info_sent_to_php"])) {
+		$id = mysqli_real_escape_string($connect, $_POST["info_sent_to_php"]);
+		$sql_add_friend = "INSERT INTO friendships (`fk_userID_from`,`fk_userID_to`) VALUES ('".$_SESSION['user']."','$id')";
+		$result_add_friend = $connect->query($sql_add_friend);
+		echo $result_add_friend;
 	}
+
+	//insernt in DB with as PHP request
+	//in this case button should have link as href='add_friend.php?id=".$row['userID']."'
+	// if ($_GET['id']) {
+	// 	$id = $_GET['id'];
+	// 	$sql_add_friend = "INSERT INTO friendships (`fk_userID_from`,`fk_userID_to`) VALUES ('".$_SESSION['user']."','$id')";
+	// 	$check = $connect->query($sql_add_friend);
+	// 	if($check  === TRUE) {
+	// 		header("Location: home.php");
+	// 		exit;
+	// 	} else {
+	// 		echo "Error while sending friend request: ". $connect->error;
+	// 	}
+	// }
 }			
 $connect->close();
 ?>
