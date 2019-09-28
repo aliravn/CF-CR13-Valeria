@@ -56,7 +56,7 @@ $result_others = $connect->query($sql_others);
 								<p class='friend-username'>".$row['username']."</p>
 							</div>
 							<a class='button-container'>
-								<button class='add-friend-button' name='".$row['username']."' id='".$row['userID']."' type='button'>Add Friend</button>
+								<button class='add-friend-button' name='".$row['username']."' id='".$row['userID']."' type='button'>Send request</button>
 							</a>							
 						</div>";
 					} 
