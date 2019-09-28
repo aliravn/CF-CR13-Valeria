@@ -8,6 +8,7 @@
 	$result_counter = $connect->query($sql_counter);
 	$counter = $result_counter->num_rows;
 
+	// select all entries in friendships with current user in it
 	$sql_friends = "SELECT userID, username, userpic FROM friendships JOIN users ON fk_userID_from = userID OR fk_userID_to = userID WHERE fk_userID_from =" .$_SESSION['user']. " AND userID !=" .$_SESSION['user']. " OR fk_userID_to =" .$_SESSION['user']. " AND userID !=".$_SESSION['user'];
 	$result_friends = $connect->query($sql_friends);
 ?>
@@ -33,13 +34,7 @@
 				<i class="fa fa-users sidebar-link fa-fw"></i>
 				Show friends
 			</a>
-		</li>
-		<li class="nav-item">
-			<a href="friendships.php" class="nav-link text-dark font-italic">
-				<i class="fa fa-address-book sidebar-link fa-fw"></i>
-				Show requests [n/a]
-			</a>
-		</li>		
+		</li>	
 
 		<p class="text-gray font-weight-bold text-uppercase px-3 mt-3 mb-0 small">User settings [n/a]</p>
 		<li class="nav-item">
