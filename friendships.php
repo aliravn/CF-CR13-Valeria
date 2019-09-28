@@ -29,7 +29,7 @@ $result_friend_request = $connect->query($sql_friend_request);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Friends</title>
+	<title>PEOPLE|Friends</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
