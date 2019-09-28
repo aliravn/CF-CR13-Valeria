@@ -52,12 +52,20 @@ if(isset($_POST['btn-login'])) {
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login</title>
+		<title>PEOPLE|Login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href ="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"  crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Blinker|Saira+Stencil+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/index_style.css">
 	</head>
 
 	<body>
+	<!-- HEADER section -->
+		<header>
+			<h1>Welcome to PEOPLE Network</h1>
+		</header>
+
 		<form class="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete= "off">
 			<h3>ACCOUNT LOGIN</h3>
 			<br>

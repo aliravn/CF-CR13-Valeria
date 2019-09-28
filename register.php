@@ -81,38 +81,45 @@ if (isset($_POST['btn-signup'])) {
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Register</title>
-	<link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/index_style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-</head>
-<body>
-	<form class="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" >
-		<h3>CREATE NEW ACCOUNT</h3>
-		<br>
-		<?php if (isset($errMSG)) { ?>
-		<div  class="alert alert-<?php echo $errTyp ?> ">
-		<?php echo $errMSG; ?>
-		</div>
-		<?php } ?>
+	<head>
+		<title>PEOPLE|Register</title>
+		<link rel="stylesheet"  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Blinker|Saira+Stencil+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/index_style.css">		
+	</head>
 
-		<input type="text" name="name" class="login-input regi-pass-input" id="username" placeholder ="your name: Anna, Mark, Debby, etc." maxlength ="50" value= "<?php echo $name ?>" />
-		<span class="regi-check" id="availability"></span>
-		<span class="text-danger regi-check" > <?php echo $nameError; ?> </span>		
-		<p class="regi-text">Username: min. 3 characters, only letterst and/or numbers</p>
+	<body>
+		<!-- HEADER section -->
+		<header>
+			<h1>Welcome to PEOPLE Network</h1>
+		</header>
 
-		<input type="email" name="email" class="login-input" id="email" placeholder="email" maxlength = "40" value="<?php echo $email ?>" />
-		<span class="text-danger regi-check"><?php echo $emailError; ?></span>
-		
-		<input type="password" name="pass" class="login-input regi-pass-input" placeholder="password" maxlength = "15" />
-		<p class="regi-text">Password: min. 10 characters, 1 number, 1 capital letter</p>
-		<span class="text-danger regi-check"><?php echo $passError; ?></span>
-		
-		<button id="register" class="login-button" type="submit" name="btn-signup">REGISTER</button >
-		<p>Already have an account?  <a href = "index.php">Sign in</a></p>
-	</form>
-</body>
+		<form class="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" >
+			<h3>CREATE NEW ACCOUNT</h3>
+			<br>
+			<?php if (isset($errMSG)) { ?>
+			<div  class="alert alert-<?php echo $errTyp ?> ">
+			<?php echo $errMSG; ?>
+			</div>
+			<?php } ?>
+
+			<input type="text" name="name" class="login-input regi-pass-input" id="username" placeholder ="your name: Anna, Mark, Debby, etc." maxlength ="50" value= "<?php echo $name ?>" />
+			<span class="regi-check" id="availability"></span>
+			<span class="text-danger regi-check" > <?php echo $nameError; ?> </span>		
+			<p class="regi-text">Username: min. 3 characters, only letterst and/or numbers</p>
+
+			<input type="email" name="email" class="login-input" id="email" placeholder="email" maxlength = "40" value="<?php echo $email ?>" />
+			<span class="text-danger regi-check"><?php echo $emailError; ?></span>
+			
+			<input type="password" name="pass" class="login-input regi-pass-input" placeholder="password" maxlength = "15" />
+			<p class="regi-text">Password: min. 10 characters, 1 number, 1 capital letter</p>
+			<span class="text-danger regi-check"><?php echo $passError; ?></span>
+			
+			<button id="register" class="login-button" type="submit" name="btn-signup">REGISTER</button >
+			<p>Already have an account?  <a href = "index.php">Sign in</a></p>
+		</form>
+	</body>
 </html>
 
 <script>
