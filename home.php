@@ -85,7 +85,8 @@ $(document).ready(function() {
 			data:{info_sent_to_php:user_id},
 			success:function(data) {
 				if (data == 1) {
-					$('#update').html(`<span><?php echo $user_details['username']; ?> is now a friend of ${name}</span>`);
+					// $('#update').html(`<span><?php echo $user_details['username']; ?> is now a friend of ${name}</span>`);
+					$('#update').html(`<span><?php echo $user_details['username']; ?> has sent friend request to ${name}</span>`);
 					$('#update').css("background-color","#4bf542");
 				} else {
 					$('#update').html(`<span class="text-danger">${data}</span>`);
