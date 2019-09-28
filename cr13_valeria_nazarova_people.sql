@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 28, 2019 at 02:23 PM
+-- Generation Time: Sep 28, 2019 at 04:56 PM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -41,12 +41,22 @@ INSERT INTO `friendships` (`friendshipID`, `fk_userID_from`, `fk_userID_to`, `fr
 (1, 2, 3, 'confirmed'),
 (2, 4, 3, 'confirmed'),
 (3, 3, 5, 'confirmed'),
-(4, 4, 2, 'request'),
-(5, 2, 5, 'request'),
+(4, 4, 2, 'confirmed'),
+(5, 2, 5, 'confirmed'),
 (6, 4, 5, 'request'),
 (7, 5, 6, 'request'),
 (8, 5, 7, 'request'),
-(9, 4, 7, 'request');
+(9, 4, 7, 'request'),
+(40, 12, 11, 'request'),
+(41, 12, 10, 'request'),
+(42, 13, 2, 'confirmed'),
+(56, 5, 8, 'request'),
+(57, 7, 12, 'request'),
+(58, 7, 11, 'request'),
+(59, 13, 1, 'request'),
+(60, 13, 3, 'request'),
+(61, 13, 4, 'request'),
+(62, 13, 5, 'confirmed');
 
 -- --------------------------------------------------------
 
@@ -79,7 +89,8 @@ INSERT INTO `users` (`userID`, `useremail`, `userpass`, `username`, `userpic`, `
 (9, 'karrianne@ex.org', 'cdf9cc7ec3ae4e84cc98ac13df2c5a4cabf85ef64b65a45282bc09cc0ab2d29e', 'Karianne', 'img/avatar_eva.jpg', '0'),
 (10, 'vildan@ex.org', '65df3f48cb1c8c43034d17236df49690fcbf08ce72e21f47c413a9f50975296a', 'Vildan', 'img/avatar_eva.jpg', '0'),
 (11, 'kathi@ex.org', 'a6725a2fc35c4dcb82d5ca190c20aadc72eb332f1220219239f9af48f5b2b61e', 'Kathi', 'img/avatar_eva.jpg', '0'),
-(12, 'goran@ex.org', '3d381e35a0d93c77ab5a8b09e07cb2f2f0ad09a645791d7745782f94e6d1007a', 'Goran', 'img/avatar_default.jpg', '0');
+(12, 'goran@ex.org', '3d381e35a0d93c77ab5a8b09e07cb2f2f0ad09a645791d7745782f94e6d1007a', 'Goran', 'img/avatar_default.jpg', '0'),
+(13, 'alexmy@email.com', '5a15dc7f4f003e8ee1aa49829d9f1e0f0183f64a3c53839b2a24583d40a8aace', 'Alex', 'img/avatar_default.jpg', '0');
 
 --
 -- Indexes for dumped tables
@@ -107,12 +118,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `friendships`
 --
 ALTER TABLE `friendships`
-  MODIFY `friendshipID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `friendshipID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Constraints for dumped tables
 --
