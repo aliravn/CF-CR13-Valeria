@@ -87,6 +87,11 @@ header {
 	background: lightblue;
 }
 
+#update {
+  height: 1.5rem;
+  color: #000000;
+}
+
 .friend-card {
 	display: flex;
 	flex-flow: column;
@@ -120,6 +125,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #599FD9;
 }
 
 footer p {
