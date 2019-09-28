@@ -102,11 +102,11 @@ header {
 .col-border {
 	border: 2px solid black;
 /* 	box-shadow: 3px 3px 3px blue, -3px -3px 3px blue; */
-	background-color: #9191f2;
+	background-color: #ff5454;
 }
 
 .col-border-friends {
-	background-color: #4daad1;
+	background-color: #63f263;
 }
 
 .button-container {
