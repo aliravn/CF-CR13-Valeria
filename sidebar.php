@@ -36,7 +36,7 @@ $result_friends = $connect->query($sql_friends);
 			</a>
 		</li>	
 
-		<p class="text-gray font-weight-bold text-uppercase px-3 mt-3 mb-0 small">User settings [n/a]</p>
+		<p class="text-gray font-weight-bold text-uppercase px-3 mt-3 mb-0 small">User settings</p>
 		<li class="nav-item">
 			<a href="#" class="nav-link text-dark font-italic">
 				<i class="fa fa-user-circle-o sidebar-link fa-fw"></i>
