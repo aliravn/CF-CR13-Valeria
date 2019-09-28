@@ -27,8 +27,8 @@ $result_others = $connect->query($sql_others);
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>	
-	<link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Blinker|Saira+Stencil+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 </head>
@@ -36,7 +36,9 @@ $result_others = $connect->query($sql_others);
 <body>
 
 <!-- HEADER section -->
-	<header></header>
+	<header>
+		<h2>PEOPLE.net = finding friends made easy</h2>
+	</header>
 
 <!-- PAGE CONTENT section -->
 	<div class="page-content">

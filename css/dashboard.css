@@ -23,9 +23,16 @@ body {
 header {
 	height: 10vh;
 	background-color: #599FD9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-
+header h2 {
+	font-family: 'Saira Stencil One', cursive;
+	color: #ffffff;
+	margin: 0;
+}
 
 /****************************** SIDEBAR section *******************************/
 
