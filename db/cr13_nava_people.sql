@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cr13_valeria_nazarova_people`
+-- Database: `cr13_nava_people`
 --
 
 -- --------------------------------------------------------
